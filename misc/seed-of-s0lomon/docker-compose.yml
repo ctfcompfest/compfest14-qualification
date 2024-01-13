@@ -1,0 +1,25 @@
+version: '3'
+services:
+  lair-react:
+    build: ./src/frontend
+    image: "lair-react:1.0.0"
+    networks:
+      - lair-net
+  lair-api:
+    build: ./src/backend
+    image: "lair-api:1.0.0"
+    networks:
+      - lair-net
+  nginx:
+    build: ./src/nginx
+    image: "nginx:1.0.0"
+    networks:
+      - lair-net
+    ports:
+      - "11069:80"
+networks:
+  lair-net:
+    ipam:
+      driver: default
+      config:
+        - subnet: 10.10.0.0/24

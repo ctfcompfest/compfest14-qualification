@@ -1,0 +1,5 @@
+dXNlciA6IG5hZGVua2FfNjkKcGFzcyA6IG5hZGVua2FfbWFfbHV2 // base 64
+
+decoded base64 :
+user : nadenka_69
+pass : nadenka_ma_luv

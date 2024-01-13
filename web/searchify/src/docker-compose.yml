@@ -1,0 +1,38 @@
+version: '3'
+services:
+  backend:
+    build: backend
+    restart: on-failure
+    container_name: searchify_backend
+    read_only: true
+    environment:
+      - FLASK_ENV=development
+      - FLASK_APP=searchify
+      - BING_SEARCH_V7_SUBSCRIPTION_KEY=b8a6eaad2b87406a84a79aa02166e540
+    networks:
+      searchify-network:
+        ipv4_address: 172.31.0.64
+
+  frontend:
+    build: frontend
+    restart: on-failure
+    container_name: searchify_frontend
+    depends_on:
+      - "backend"
+    ports:
+      - 9013:80
+    networks:
+      searchify-network:
+        ipv4_address: 172.31.0.99
+    extra_hosts:
+      cdn.jsdelivr.net: 104.16.88.20
+      unpkg.com: 104.16.122.175
+      fonts.googleapis.com: 142.250.196.138
+    dns: "127.0.0.1"
+
+networks:
+  searchify-network:
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.31.0.0/24

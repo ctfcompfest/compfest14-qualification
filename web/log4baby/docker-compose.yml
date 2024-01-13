@@ -1,0 +1,20 @@
+version: '3'
+services:
+    app:
+        build: src/app
+        image: "log4baby:latest"
+        networks:
+            - log4baby-net
+    nginx:
+        build: src/nginx
+        image: "log4baby-nginx:latest"
+        networks:
+            - log4baby-net
+        ports:
+            - "14401:80"
+networks:
+    log4baby-net:
+        ipam:
+            driver: default
+            config:
+                - subnet: 10.10.1.0/24

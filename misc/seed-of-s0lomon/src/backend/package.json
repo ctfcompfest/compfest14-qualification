@@ -1,0 +1,19 @@
+{
+  "name": "lair-api",
+  "version": "1.0.0",
+  "description": "API for Nadenka's Lair",
+  "main": "index.js",
+  "scripts": {
+    "start": "NODE_ENV=production nodemon index.js",
+    "dev": "NODE_ENV=development nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "release": "docker build -t lair-api:1.0.0 ."
+  },
+  "type": "module",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-rate-limit": "^6.4.0",
+    "nodemon": "^2.0.2"
+  }
+}

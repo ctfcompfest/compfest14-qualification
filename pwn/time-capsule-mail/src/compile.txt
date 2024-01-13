@@ -1,0 +1,3 @@
+gcc -c -Wall -fpic libtcmail.c
+gcc -shared -o libtcmail.so libtcmail.o
+gcc -L. -Wl,-rpath='$ORIGIN' -Wall -o tcmail tcmail.c -ltcmail

@@ -1,0 +1,12 @@
+version: "3.8"
+services:
+  seemsfamiliar1:
+    build:
+      context: .
+    ports:
+        - "12688:9999"
+  seemsfamiliar2:
+    build:
+      context: .
+    ports:
+        - "12689:9999"

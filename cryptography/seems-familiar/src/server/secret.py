@@ -1,0 +1,1 @@
+FLAG = b"COMPFEST14{1nDeP3ndenT_bLoCK_ENCryPt10n_w1Th_fl4G_ApP3nDED_0f_course_iTS_eCB_oracLE_f97ae3a047}"

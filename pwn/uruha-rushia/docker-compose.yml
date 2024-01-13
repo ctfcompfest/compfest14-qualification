@@ -1,0 +1,15 @@
+version: "3.8"
+services:
+  app:
+    build:
+      context: .
+    ports:
+        - "11936:9999"
+    networks:
+        - app
+networks:
+  app:
+    ipam:
+      driver: default
+      config:
+        - subnet: 11.11.2.0/24
